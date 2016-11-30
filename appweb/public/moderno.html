@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>App web mopderno</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<h1>App web moderno</h1>
+	<button id="solicita">Solicitar Convidados</button>
+	<div id="ret"></div>
+	<script>
+		$("#solicita").click( () => {
+			$.getJSON( "convidados", ( data ) => {
+				$.map(data, (e) => {
+					$("#ret").append($("<p>").text(e.nomeconvidado));
+						});
+					});
+				});
+	</script>
+</body>
+</html>
